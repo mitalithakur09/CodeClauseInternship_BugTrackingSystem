@@ -1,0 +1,31 @@
+CREATE DATABASE bugtracking;
+
+USE bugtracking;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) UNIQUE,
+    password VARCHAR(255)
+);
+
+CREATE TABLE bugs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255),
+    description TEXT,
+    status VARCHAR(50),
+    reporter_id INT,
+    FOREIGN KEY (reporter_id) REFERENCES users(id)
+);
+-- sample users
+INSERT INTO users (username, password) VALUES
+    ('Ram', 'password123'),
+    ('Mohit', 'pass123'),
+    ('admin', 'admin123');
+
+-- sample bugs
+INSERT INTO bugs (title, description, status, reporter_id) VALUES
+    ('UI Bug', 'The button color is incorrect.', 'Open', 1),
+    ('Functionality Issue', 'Application crashes on startup.', 'In Progress', 2),
+    ('Security Flaw', 'Vulnerability in login process.', 'New', 1),
+    ('Data Bug', 'Incorrect data is displayed in reports.', 'Closed', 3);
+
