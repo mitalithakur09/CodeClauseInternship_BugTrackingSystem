@@ -1,0 +1,13 @@
+Task-3 BugTrackingSystem
+
+Project Description:
+This is Bug tracking system where we can track records of bugs and there status in a project.
+
+Technology used-
+
+  -IDE- Eclipse
+  -DataBase- MySQL
+  -Server - Xampp
+  -Connector- mysql-connector-j-8.2.0
+  -Back-End - Java, SQl
+  -UI- Swing 
